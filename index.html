@@ -1,313 +1,157 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sander Lobbes – Sportevenementen & Toernooien</title>
 
   <!-- SEO -->
-  <title>Sander Lobbes – Sportevenementen & Toernooien</title>
   <meta name="description" content="Sander Lobbes organiseert sportevenementen en toernooien die mensen in beweging brengen. Bekijk zijn ervaring, projecten en aankomende evenementen." />
   <meta name="author" content="Sander Lobbes" />
   <meta name="keywords" content="sportevenement, toernooi, lichamelijke opvoeding, Sander Lobbes, sportorganisatie, Hollandia, KNVB, omnigames, West-Friesland" />
 
-  <!-- Open Graph voor social media previews -->
+  <!-- Social media preview -->
   <meta property="og:title" content="Sander Lobbes – Sportevenementen" />
   <meta property="og:description" content="Sportevenementen die verbinden. Ontdek wie Sander Lobbes is en wat hij organiseert." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alobbes.github.io" />
-  <!-- Als je een logo of afbeelding hebt: -->
-  <!-- <meta property="og:image" content="https://alobbes.github.io/images/logo.jpg" /> -->
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sander Lobbes – Sportevenementen" />
-  <meta name="twitter:description" content="Bekijk toernooien en sportprojecten van Sander Lobbes, docent en organisator." />
-</head>
-
-  
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --primary-color: #1e88e5; /* helder blauw */
-      --secondary-color: #43a047; /* fris groen */
-      --bg-color: #f5f9ff;
-      --text-color: #222;
-      --shadow-color: rgba(30, 136, 229, 0.2);
-    }
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #e6f2e6; /* zacht groen */
-background-image: 
-  linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px);
-background-size: 40px 40px;
-
-      color: var(--text-color);
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem 3rem;
-      line-height: 1.5;
-    }
-    header {
-      background: var(--primary-color);
-      color: white;
-      padding: 4rem 2rem 3rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 8px 16px var(--shadow-color);
-    }
-    header h1 {
-      margin: 0 0 0.3rem;
-      font-weight: 600;
-      font-size: 3rem;
-      letter-spacing: 1.2px;
-    }
-    header p.subtitle {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/grass.png');
+      background-color: #f5fff5;
       margin: 0;
-      font-weight: 300;
-      font-size: 1.25rem;
-      letter-spacing: 0.8px;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to right, #d2f1d2, #f0fff0);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
+      margin: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #1c4b1c;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #3a5e3a;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     section {
-      margin-top: 3rem;
-      background: white;
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-    }
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-bottom: 3px solid var(--secondary-color);
-      padding-bottom: 0.5rem;
-      text-transform: uppercase;
-    }
-    p {
-      font-weight: 300;
-      font-size: 1.1rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .evenementen {
+    h2 {
+      color: #1c4b1c;
+      font-family: 'Poppins', sans-serif;
+      border-bottom: 2px solid #8bd68b;
+      padding-bottom: 0.4rem;
+    }
+
+    .event-logo {
+      display: block;
+      margin: 2rem auto;
+      max-width: 220px;
+      transition: transform 0.3s ease;
+    }
+
+    .event-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonials {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.8rem;
+      margin-top: 1rem;
       justify-content: center;
     }
-    .evenement {
-      background: #f0f8ff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(67, 160, 71, 0.15);
-      padding: 1.5rem 1rem 2rem;
+
+    .testimonial {
+      background: #d0f0d6;
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
       max-width: 280px;
-      text-align: center;
-      cursor: default;
-      transition: transform 0.25s ease;
-    }
-    .evenement:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(67, 160, 71, 0.3);
-    }
-    .evenement img {
-      max-width: 180px;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      transition: filter 0.3s ease;
-    }
-    .evenement img:hover {
-      filter: brightness(0.85);
-    }
-    .evenement h3 {
-      margin: 0.5rem 0 0.8rem;
-      color: var(--secondary-color);
-      font-weight: 600;
-      font-size: 1.3rem;
-      letter-spacing: 0.8px;
-    }
-    .evenement p {
-      font-size: 1rem;
-      color: #555;
-      font-weight: 300;
+      box-shadow: 0 4px 10px rgba(67,160,71,0.2);
+      font-style: italic;
+      color: #2f5d2f;
+      position: relative;
+      transition: transform 0.3s ease;
     }
 
-    .contact a {
-      display: inline-block;
-      background: var(--secondary-color);
-      color: white;
-      padding: 0.85rem 1.5rem;
-      text-decoration: none;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.5);
-      transition: background-color 0.3s ease;
+    .testimonial:hover {
+      transform: translateY(-6px);
     }
-    .contact a:hover {
-      background: #388e3c;
+
+    .testimonial p {
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+    }
+
+    .testimonial span {
+      font-weight: 600;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #1b3b1b;
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #666;
-      padding-bottom: 1.2rem;
-      user-select: none;
+      color: #555;
     }
 
-    /* Social media footer */
-    footer .socials {
-      margin-bottom: 0.8rem;
-    }
-    footer .socials a {
-      display: inline-block;
-      margin: 0 10px;
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-    footer .socials a:hover {
-      color: var(--secondary-color);
+    a {
+      color: #2e7d32;
+      text-decoration: none;
     }
 
-    /* Responsive */
+    a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 600px) {
-      .evenementen {
+      .testimonials {
         flex-direction: column;
         align-items: center;
       }
-      .evenement {
-        max-width: 100%;
+
+      .hero h1 {
+        font-size: 2rem;
       }
     }
   </style>
-  <!-- FontAwesome CDN voor social iconen -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Sander Lobbes - Sportevenementen Organisator</h1>
-    <p class="subtitle">Docent LO | Voormalig KNVB-scout | Trainer | Door sport mensen verbinden</p>
+
+  <header class="hero">
+    <h1>Sander Lobbes</h1>
+    <p>Organisator van sportevenementen & toernooien | Docent Lichamelijke Opvoeding</p>
   </header>
 
   <section>
     <h2>Over mij</h2>
-    <p>Ik ben Sander Lobbes, docent lichamelijke opvoeding met een passie voor het organiseren van sportevenementen.  
-      Door mijn werk als voormalig KNVB-scout en jarenlange ervaring als trainer bij toonaangevende amateurclubs zoals Hollandia, weet ik als geen ander hoe sport mensen verbindt en motiveert.  
-      Mijn missie: zoveel mogelijk mensen in beweging krijgen via toernooien en evenementen.</p>
+    <p>Ik ben Sander Lobbes met een passie voor sportevenementen organiseren. Als docent lichamelijke opvoeding wil ik mensen in beweging brengen via toernooien en sportdagen. Ik ben in het verleden werkzaam geweest als scout voor de nationale KNVB en jarenlang trainer geweest van toonaangevende amateurclubs zoals Hollandia.</p>
   </section>
 
   <section>
     <h2>Evenementen</h2>
-    <div class="evenementen" id="evenementen-container">
-      <!-- Evenementen verschijnen hier -->
-    </div>
-  </section>
+    <p>Een van mijn recente evenementen is de Westfriese Omnigames 2025. Klik op het logo hieronder om het live programma en inf
 
- <section>
-  <h2>Wat deelnemers zeggen</h2>
-  <div class="testimonials">
-    <div class="testimonial">
-      <p>"Dankzij Sander’s organisatie was ons toernooi een groot succes! Alles was tot in de puntjes geregeld."</p>
-      <span>- Jan de Vries, deelnemer</span>
-    </div>
-    <div class="testimonial">
-      <p>"De sportieve sfeer en goede communicatie maakten dit evenement echt bijzonder."</p>
-      <span>- Marloes van Dijk, trainer</span>
-    </div>
-    <div class="testimonial">
-      <p>"Sander weet mensen te motiveren en verbindt iedereen met zijn passie voor sport."</p>
-      <span>- Club Hollandia</span>
-    </div>
-  </div>
-</section>
-
-
-  
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Heb je vragen of wil je samenwerken? Stuur me gerust een bericht!</p>
-    <a href="mailto:lobbessander@gmail.com">Stuur een e-mail</a>
-  </section>
-
-  <footer>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/sanderlobbes" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/sanderlobbes" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter-square"></i></a>
-      <a href="https://instagram.com/sanderlobbes" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram-square"></i></a>
-    </div>
-    © 2025 Sander Lobbes – Sport & Evenementen
-  </footer>
-
-  <script>
-    // Evenementen data
-    const evenementen = [
-      {
-        naam: "Westfriese OmniGames 2025",
-        logo: "logo-westfriese.png",
-        url: "https://www.tournify.nl/live/westfrieseomnigames2025",
-        beschrijving: "Bekijk hier het programma, de poules en uitslagen.",
-        bevestiging: true
-      },
-      {
-        naam: "Voorbeeld Toernooi",
-        logo: "logo-toernooi.png",
-        url: "https://www.tournify.nl/live/kktn8nTcGNDHuxNEz4xj",
-        beschrijving: "Actueel toernooi met het laatste speelschema en deelnemers.",
-        bevestiging: false
-      }
-    ];
-
-    const container = document.getElementById('evenementen-container');
-
-    evenementen.forEach(evenement => {
-      const div = document.createElement('div');
-      div.className = 'evenement';
-
-      // Maak img element met click handler voor bevestiging
-      const img = document.createElement('img');
-      img.src = evenement.logo;
-      img.alt = evenement.naam + " logo";
-      img.style.cursor = "pointer";
-
-      if (evenement.bevestiging) {
-        img.addEventListener('click', () => {
-          const ok = confirm(`Wil je de website van ${evenement.naam} bezoeken?`);
-          if (ok) {
-            window.open(evenement.url, '_blank', 'noopener');
-          }
-        });
-        div.appendChild(img);
-      } else {
-        const link = document.createElement('a');
-        link.href = evenement.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.appendChild(img);
-        div.appendChild(link);
-      }
-
-      const titel = document.createElement('h3');
-      titel.textContent = evenement.naam;
-
-      const beschrijving = document.createElement('p');
-      beschrijving.textContent = evenement.beschrijving;
-
-      div.appendChild(titel);
-      div.appendChild(beschrijving);
-
-      container.appendChild(div);
-    });
-  </script>
-</body>
-</html>
