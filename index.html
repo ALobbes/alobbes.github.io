@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sander Lobbes – Sportevenementen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    header {
+      background: #0a74da;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    p.subtitle {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    section {
+      margin-top: 3rem;
+    }
+    h2 {
+      border-bottom: 3px solid #0a74da;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .evenementen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .evenement {
+      flex: 1 1 250px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+    .evenement:hover {
+      box-shadow: 0 0 15px #0a74da;
+    }
+    .evenement img {
+      max-width: 200px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .evenement h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #0a74da;
+    }
+    .contact a {
+      display: inline-block;
+      background: #0a74da;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sander Lobbes</h1>
+    <p class="subtitle">Docent LO | Voormalig KNVB-scout | Trainer | Door sport mensen verbinden</p>
+  </header>
+
+  <section>
+    <h2>Over mij</h2>
+    <p>Ik ben Sander Lobbes, docent lichamelijke opvoeding met een passie voor het organiseren van sportevenementen.  
+    Door mijn werk als voormalig KNVB-scout en jarenlange ervaring als trainer bij toonaangevende amateurclubs zoals Hollandia, weet ik als geen ander hoe sport mensen verbindt en motiveert.  
+    Mijn missie: zoveel mogelijk mensen in beweging krijgen via toernooien en evenementen.</p>
+  </section>
+
+  <section>
+    <h2>Evenementen</h2>
+    <div class="evenementen" id="evenementen-container">
+      <!-- Evenementen verschijnen hier -->
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Heb je vragen of wil je samenwerken? Stuur me gerust een bericht!</p>
+    <a href="mailto:example@example.com">Stuur een e-mail</a>
+  </section>
+
+  <footer>
+    © 2025 Sander Lobbes – Sport & Evenementen
+  </footer>
+
+  <script>
+    // Evenementen data
+    const evenementen = [
+      {
+        naam: "Westfriese OmniGames 2025",
+        logo: "logo-westfriese.png",
+        url: "https://www.tournify.nl/live/westfrieseomnigames2025",
+        beschrijving: "Bekijk hier het programma, de poules en uitslagen.",
+        bevestiging: true  // vraagt om bevestiging bij klikken
+      },
+      {
+        naam: "Voorbeeld Toernooi",
+        logo: "logo-toernooi.png",
+        url: "https://www.tournify.nl/live/kktn8nTcGNDHuxNEz4xj",
+        beschrijving: "Actueel toernooi met het laatste speelschema en deelnemers.",
+        bevestiging: false
+      }
+    ];
+
+    const container = document.getElementById('evenementen-container');
+
+    evenementen.forEach(evenement => {
+      const div = document.createElement('div');
+      div.className = 'evenement';
+
+      // Maak img element met click handler voor bevestiging
+      const img = document.createElement('img');
+      img.src = evenement.logo;
+      img.alt = evenement.naam + " logo";
+      img.style.cursor = "pointer";
+
+      if (evenement.bevestiging) {
+        img.addEventListener('click', () => {
+          const ok = confirm(`Wil je de website van ${evenement.naam} bezoeken?`);
+          if (ok) {
+            window.open(evenement.url, '_blank', 'noopener');
+          }
+        });
+      } else {
+        // Normale link gedrag
+        const link = document.createElement('a');
+        link.href = evenement.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.appendChild(img);
+        div.appendChild(link);
+      }
+
+      // Als bevestiging aan staat, img direct toevoegen
+      if (evenement.bevestiging) {
+        div.appendChild(img);
+      }
+
+      const titel = document.createElement('h3');
+      titel.textContent = evenement.naam;
+
+      const beschrijving = document.createElement('p');
+      beschrijving.textContent = evenement.beschrijving;
+
+      div.appendChild(titel);
+      div.appendChild(beschrijving);
+
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
