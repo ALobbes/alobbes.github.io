@@ -69,6 +69,8 @@
       margin: 2rem auto;
       max-width: 220px;
       transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
     }
 
     .event-logo:hover {
@@ -93,6 +95,7 @@
       color: #2f5d2f;
       position: relative;
       transition: transform 0.3s ease;
+      flex: 1 1 280px;
     }
 
     .testimonial:hover {
@@ -127,14 +130,31 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      .testimonials {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
       }
 
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .testimonial {
+        padding: 1rem;
       }
     }
   </style>
@@ -148,7 +168,7 @@
 
   <section>
     <h2>Over mij</h2>
-    <p>Ik ben Sander Lobbes en heb een passie voor het organiseren van sportevenementen. Als docent lichamelijke opvoeding wil ik mensen altijd in beweging brengen. Ik ben in het verleden werkzaam geweest als scout voor de nationale KNVB en jarenlang trainer geweest van toonaangevende amateurclubs zoals Hollandia. Echter wil ik me nu focussen op het creëren van sportieve evemeneten.</p>
+    <p>Ik ben Sander Lobbes en heb een passie voor sportevenementen organiseren. Als docent lichamelijke opvoeding wil ik mensen in beweging brengen. Ik ben in het verleden werkzaam geweest als scout voor de nationale KNVB o17 t/m o19 en jarenlang trainer geweest van toonaangevende amateurclubs zoals Hollandia.Vanaf heden wil ik me graag focussen op het organiseren van sportevenementen. </p>
   </section>
 
   <section>
@@ -184,5 +204,3 @@
 
 </body>
 </html>
-
-
