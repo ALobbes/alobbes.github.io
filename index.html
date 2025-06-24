@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sander Lobbes – Sportevenementen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #1e88e5; /* helder blauw */
+      --secondary-color: #43a047; /* fris groen */
+      --bg-color: #f5f9ff;
+      --text-color: #222;
+      --shadow-color: rgba(30, 136, 229, 0.2);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+      line-height: 1.5;
+    }
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 4rem 2rem 3rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 16px var(--shadow-color);
+    }
+    header h1 {
+      margin: 0 0 0.3rem;
+      font-weight: 600;
+      font-size: 3rem;
+      letter-spacing: 1.2px;
+    }
+    header p.subtitle {
+      margin: 0;
+      font-weight: 300;
+      font-size: 1.25rem;
+      letter-spacing: 0.8px;
+    }
+
+    section {
+      margin-top: 3rem;
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    }
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-bottom: 3px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    p {
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .evenementen {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .evenement {
+      background: #f0f8ff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(67, 160, 71, 0.15);
+      padding: 1.5rem 1rem 2rem;
+      max-width: 280px;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.25s ease;
+    }
+    .evenement:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(67, 160, 71, 0.3);
+    }
+    .evenement img {
+      max-width: 180px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+    .evenement img:hover {
+      filter: brightness(0.85);
+    }
+    .evenement h3 {
+      margin: 0.5rem 0 0.8rem;
+      color: var(--secondary-color);
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.8px;
+    }
+    .evenement p {
+      font-size: 1rem;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .contact a {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.5);
+      transition: background-color 0.3s ease;
+    }
+    .contact a:hover {
+      background: #388e3c;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+      padding-bottom: 1.2rem;
+      user-select: none;
+    }
+
+    /* Social media footer */
+    footer .socials {
+      margin-bottom: 0.8rem;
+    }
+    footer .socials a {
+      display: inline-block;
+      margin: 0 10px;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    footer .socials a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .evenementen {
+        flex-direction: column;
+        align-items: center;
+      }
+      .evenement {
+        max-width: 100%;
+      }
+    }
+  </style>
+  <!-- FontAwesome CDN voor social iconen -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Sander Lobbes</h1>
+    <p class="subtitle">Docent LO | Voormalig KNVB-scout | Trainer | Door sport mensen verbinden</p>
+  </header>
+
+  <section>
+    <h2>Over mij</h2>
+    <p>Ik ben Sander Lobbes, docent lichamelijke opvoeding met een passie voor het organiseren van sportevenementen.  
+      Door mijn werk als voormalig KNVB-scout en jarenlange ervaring als trainer bij toonaangevende amateurclubs zoals Hollandia, weet ik als geen ander hoe sport mensen verbindt en motiveert.  
+      Mijn missie: zoveel mogelijk mensen in beweging krijgen via toernooien en evenementen.</p>
+  </section>
+
+  <section>
+    <h2>Evenementen</h2>
+    <div class="evenementen" id="evenementen-container">
+      <!-- Evenementen verschijnen hier -->
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Heb je vragen of wil je samenwerken? Stuur me gerust een bericht!</p>
+    <a href="mailto:example@example.com">Stuur een e-mail</a>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/sanderlobbes" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/sanderlobbes" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://instagram.com/sanderlobbes" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+    </div>
+    © 2025 Sander Lobbes – Sport & Evenementen
+  </footer>
+
+  <script>
+    // Evenementen data
+    const evenementen = [
+      {
+        naam: "Westfriese OmniGames 2025",
+        logo: "logo-westfriese.png",
+        url: "https://www.tournify.nl/live/westfrieseomnigames2025",
+        beschrijving: "Bekijk hier het programma, de poules en uitslagen.",
+        bevestiging: true
+      },
+      {
+        naam: "Voorbeeld Toernooi",
+        logo: "logo-toernooi.png",
+        url: "https://www.tournify.nl/live/kktn8nTcGNDHuxNEz4xj",
+        beschrijving: "Actueel toernooi met het laatste speelschema en deelnemers.",
+        bevestiging: false
+      }
+    ];
+
+    const container = document.getElementById('evenementen-container');
+
+    evenementen.forEach(evenement => {
+      const div = document.createElement('div');
+      div.className = 'evenement';
+
+      // Maak img element met click handler voor bevestiging
+      const img = document.createElement('img');
+      img.src = evenement.logo;
+      img.alt = evenement.naam + " logo";
+      img.style.cursor = "pointer";
+
+      if (evenement.bevestiging) {
+        img.addEventListener('click', () => {
+          const ok = confirm(`Wil je de website van ${evenement.naam} bezoeken?`);
+          if (ok) {
+            window.open(evenement.url, '_blank', 'noopener');
+          }
+        });
+        div.appendChild(img);
+      } else {
+        const link = document.createElement('a');
+        link.href = evenement.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.appendChild(img);
+        div.appendChild(link);
+      }
+
+      const titel = document.createElement('h3');
+      titel.textContent = evenement.naam;
+
+      const beschrijving = document.createElement('p');
+      beschrijving.textContent = evenement.beschrijving;
+
+      div.appendChild(titel);
+      div.appendChild(beschrijving);
+
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
