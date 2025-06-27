@@ -4,164 +4,215 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sander Lobbes – Sportevenementen & Toernooien</title>
-  <meta name="description" content="Sander Lobbes organiseert sportevenementen met impact. Bekijk zijn projecten, visie en contactinformatie." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="description" content="Sander Lobbes organiseert sportevenementen en toernooien die mensen in beweging brengen. Bekijk zijn ervaring, projecten en aankomende evenementen." />
+  <meta name="author" content="Sander Lobbes" />
+  <meta name="keywords" content="sportevenement, toernooi, lichamelijke opvoeding, Sander Lobbes, sportorganisatie, Hollandia, KNVB, omnigames, West-Friesland" />
+
+  <!-- Social media preview -->
+  <meta property="og:title" content="Sander Lobbes – Sportevenementen" />
+  <meta property="og:description" content="Sportevenementen die verbinden. Ontdek wie Sander Lobbes is en wat hij organiseert." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alobbes.github.io" />
+
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f6ff;
+      background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #111827;
-      line-height: 1.6;
+      padding: 0;
+      color: #2c3e50;
     }
 
-    header {
-      padding: 4rem 1rem 2rem;
+    header.hero {
       text-align: center;
-      background: #f9fafb;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 4rem 1rem;
+      background: linear-gradient(to right, #FFD700, #d0e2ff);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 51, 102, 0.1);
+      margin: 2rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      color: #1f2937;
+      color: #002b5c;
+      margin-bottom: 0.5rem;
     }
 
-    header p {
-      font-size: 1.125rem;
-      color: #6b7280;
-      margin-top: 0.5rem;
+    .hero p {
+      font-size: 1.2rem;
+      color: #204570;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
 
     h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #111827;
-      font-weight: 600;
-    }
-
-    p {
-      margin-bottom: 1rem;
+      color: #003366;
+      font-family: 'Poppins', sans-serif;
+      border-bottom: 2px solid #7aa6e9;
+      padding-bottom: 0.4rem;
     }
 
     .event-logo {
       display: block;
-      max-width: 100%;
       margin: 2rem auto;
+      max-width: 220px;
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .event-logo:hover {
+      transform: scale(1.05);
     }
 
     .testimonials {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 1rem;
+      justify-content: center;
     }
 
     .testimonial {
-      background: #f3f4f6;
-      padding: 1.5rem;
-      border-radius: 8px;
+      background: #dbe9ff;
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      max-width: 280px;
+      box-shadow: 0 4px 10px rgba(0,51,102,0.2);
+      font-style: italic;
+      color: #1c3f70;
+      position: relative;
+      transition: transform 0.3s ease;
+      flex: 1 1 280px;
     }
 
-    .testimonial img {
-      max-width: 70px;
-      display: block;
-      margin-bottom: 1rem;
+    .testimonial:hover {
+      transform: translateY(-6px);
     }
 
     .testimonial p {
-      font-style: italic;
-      color: #374151;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
     }
 
     .testimonial span {
-      display: block;
-      margin-top: 0.75rem;
       font-weight: 600;
-      color: #1f2937;
-    }
-
-    iframe {
-      width: 100%;
-      height: 220px;
-      border: none;
-      margin-bottom: 1rem;
-      border-radius: 6px;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #002b5c;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.875rem;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #555;
     }
 
     a {
-      color: #2563eb;
+      color: #004b99;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .testimonial {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
+
+  <header class="hero">
     <h1>Sander Lobbes</h1>
-    <p>Sportevenementen die verbinden en inspireren</p>
+    <p>Organisator van sportevenementen & toernooien | Docent Lichamelijke Opvoeding</p>
   </header>
 
   <section>
     <h2>Over mij</h2>
-    <p>Mijn naam is Sander Lobbes. Als ervaren sportdocent en organisator help ik mensen in beweging te komen door middel van unieke en goed georganiseerde sportevenementen. Mijn achtergrond als scout voor de KNVB en trainer bij diverse topamateurclubs geeft mij een stevige basis om evenementen professioneel en met impact op te zetten.</p>
+    <p>Ik ben Sander Lobbes en heb een passie voor sportevenementen organiseren. Als docent lichamelijke opvoeding wil ik mensen in beweging brengen. Ik ben in het verleden werkzaam geweest als scout voor de nationale KNVB o17 t/m o19 en jarenlang trainer geweest van toonaangevende amateurclubs zoals Hollandia. Vanaf heden hoop ik me te kunnen inzetten voor het organiseren van sportevenementen voor vrienden, collega's etc.</p>
   </section>
 
   <section>
-    <h2>Recente evenementen</h2>
-    <p>De vijfde editie van de Westfriese Omnigames vond plaats in 2025. Een dag vol sport, verbinding en plezier. Bekijk het speelschema en uitslagen via Tournify:</p>
+    <h2>Recente Evenementen</h2>
+    <p>Een van mijn recente evenementen is de 5e editie van de Westfriese Omnigames 2025. Klik op het logo hieronder om een uniek concept te bekijken via Tournify:</p>
     <a href="https://www.tournify.nl/live/westfrieseomnigames2025" target="_blank">
-      <img src="woglogo.png" alt="Westfriese Omnigames 2025" class="event-logo">
+      <img src="woglogo.png" alt="Logo van de Westfriese Omnigames 2025" class="event-logo">
     </a>
-    <p>Ook het Beach Padel Toernooi van 2023 werd enthousiast ontvangen. Een sportieve middag met clinics, wedstrijden en een afsluitende borrel, in samenwerking met Jorge Sanchez van NH Beach Tennis.</p>
-    <img src="beachpadel.png" alt="Beach Padel flyer" class="event-logo">
   </section>
+<section>
+  <p>Ook in 2023 organiseerde ik het Beach Padel toernooi, een dag waarbij deelnemers via de gemeenschapsveiling in Wervershoof getrakteerd werden op een clinic, culinaire versnaperingen en een heus beach tennis toernooi!</p>
+      <img src="beachpadel.png" alt="BeachPadel flyer" class="event-logo">
+  </a>
+</section>
 
   <section>
-    <h2>Ervaringen van deelnemers</h2>
+    <h2>Wat deelnemers zeggen</h2>
     <div class="testimonials">
+     <div class="testimonial">
+  <img src="stichting westrand.jpg" alt="Logo Stichting Westrand" style="max-width: 80px; margin-bottom: 1rem;">
+  <p>"In 2021 heeft Sander Lobbes De Omni Games bedacht. Uniek in zijn soort en passend bij de toekomstvisie van Stichting Beheer Sportpark De Westrand. Geef mensen de kans om samen met anderen zoveel mogelijk sporten te beoefenen, recreatief of prestatiegericht. De Omni Games worden beoefend door mix-teams met allemaal een andere sportachtergrond, die in meerdere disciplines het tegen elkaar opnemen. Een groot succes."</p>
+  <span>- G. vd Swaluw, Stichting Westrand</span>
+</div>
+     <div class="testimonial">
+  <img src="2v2 toernooi o1112.2.png" alt="2v2 toernooi VVW" style="max-width: 80px; margin-bottom: 1rem;">
+  <p>"In deze voorjaarsvakantie heeft Sander een alternatief toernooitje bedacht voor onze selectie o11/12. De jongens, die onder de vlag van een bekende club, streden fanatiek om de eerste plaats. Een sportief toernooi afgesloten met lekkere broodjes knakworst gemaakt in overleg met de vrijwillige ouders. Ook voor het kleine weet Sander iedereen te motiveren en te verbinden."</p>
+  <span>- medewerker Vvw</span>
+</div>
       <div class="testimonial">
-        <img src="stichting westrand.jpg" alt="Stichting Westrand logo">
-        <p>"De Omni Games, bedacht door Sander in 2021, passen perfect bij onze toekomstvisie. Teams met uiteenlopende sportachtergronden nemen het in verschillende disciplines tegen elkaar op. Een groot succes!"</p>
-        <span>- G. vd Swaluw, Stichting Westrand</span>
-      </div>
-      <div class="testimonial">
-        <img src="2v2 toernooi o1112.2.png" alt="2v2 toernooi VVW logo">
-        <p>"Tijdens de voorjaarsvakantie organiseerde Sander een creatief en sportief toernooi voor onze jeugdselectie. Goed georganiseerd, inclusief catering door ouders. Iedereen ging met een glimlach naar huis."</p>
-        <span>- Medewerker VVW</span>
-      </div>
-      <div class="testimonial">
-        <iframe src="https://www.youtube.com/embed/LyOQ7jw8cwM" title="Testimonial video" allowfullscreen></iframe>
-        <p>"Samen met Sander organiseerden we een geslaagde middag beachpadel voor de gemeenschapsveiling in Wervershoof. Alles klopte: de clinic, het toernooi en de afsluitende borrel."</p>
-        <span>- B. Schuffel, Medeorganisator</span>
+  <iframe width="100%" height="240" src="https://www.youtube.com/embed/LyOQ7jw8cwM" 
+          title="Testimonial video" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen style="border-radius: 12px; margin-bottom: 1rem;">
+  </iframe>
+        <p>"Voor onze gemeenschapsveiling zijn wij zoekende geweest om een beachpadel toernooi op te zetten. In samenwerking met Sander, die het gehele toernooi verzorgde, en Bart, die het culinaire gedeelte verzorgde wisten we een geslaagd beachpadel middag te verzorgen. Dit werd voorafgegaan met een clinic door Jorge Sanchez van Nh Beach Tennis. Een prachtige dag. Sander en Pierre een voorrecht om samen een groep blije mensen een mooie dag te verzorgen."</p>
+        <span>- B. Schuffel - medeorganisator.</span>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Contact: <a href="mailto:lobbessander@gmail.com">lobbessander@gmail.com</a></p>
+    <p>Neem contact op via <a href="mailto:lobbessander@gmail.com">lobbessander@gmail.com</a></p>
     <p>&copy; 2025 Sander Lobbes</p>
   </footer>
+
 </body>
 </html>
